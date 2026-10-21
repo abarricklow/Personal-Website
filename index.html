@@ -42,6 +42,7 @@
 
             // Highlight the link for the section currently in view
             const sections = Array.from(navLinks)
+                .filter(function(link) { return link.getAttribute('href').startsWith('#'); })
                 .map(function(link) { return document.querySelector(link.getAttribute('href')); })
                 .filter(Boolean);
 
@@ -71,6 +72,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="assets/AllisonBarricklow-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
             </ul>
         </nav>
     </header>
@@ -82,7 +84,7 @@
                     <div class="hero-text">
                         <h1 class="floating">Hi, I'm Allison!</h1>
                         <p class="university">New Mexico State University</p>
-                        <p class="intro">"I'm a passionate student studying cybersecurity graduating in May 2027 at NMSU. I am enrolled in an accelerated program allowing me to complete a master's of computer science in May 2028 at NMSU."</p>
+                        <p class="intro">"I'm a passionate student studying cybersecurity, graduating in May 2027 at NMSU. I am enrolled in an accelerated program allowing me to complete a master's of computer science in May 2028 at NMSU."</p>
                     </div>
                     <div class="hero-image">
                         <img src="assets/headshot.jpg" alt="Allison" class="profile-image">

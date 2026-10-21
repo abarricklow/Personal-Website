@@ -649,8 +649,6 @@ html {
     line-height: 1.6;
 }
 
-
-
 /* ===== Top navigation bar ===== */
 :root {
     --nav-height: 68px;
@@ -662,7 +660,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --nav-bg: rgba(24, 28, 23, 0.92);
+        --nav-bg: rgba(67, 84, 63, 0.92);
         --nav-text: #e6ebe4;
         --nav-accent: #9fb598;
         --nav-border: rgba(159, 181, 152, 0.25);
@@ -752,6 +750,11 @@ body {
 
 .site-header .nav-links a.active {
     color: var(--nav-accent);
+}
+
+.site-header nav.container {
+    max-width: none;
+    padding: 0 2rem;
 }
 
 .site-header a:focus-visible,
