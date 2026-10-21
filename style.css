@@ -141,6 +141,13 @@ nav {
     margin-bottom: 30px;
 }
 
+.hero .seeking {
+    font-size: 0.8rem;
+    color: #2f3a2c;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
 .hero .description {
     font-size: 1.2rem;
     color: #5A5A5A;
