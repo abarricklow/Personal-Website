@@ -19,12 +19,7 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-/* Header */
-header {
-    display: none;
-}
-
+/*
 nav {
     display: flex;
     justify-content: space-between;
@@ -69,7 +64,7 @@ nav {
 .nav-links a:hover::after {
     width: 100%;
 }
-
+*/
 /* Hero Section */
 .hero {
     padding: 60px 0;

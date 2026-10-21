@@ -9,27 +9,6 @@
     <title>Allison Barricklow - Portfolio</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Typing animation for the introduction paragraph
-            const introText = "Welcome to my portfolio! I'm a passionate student studying cybersecurity and pursuing a master's in computer science at New Mexico State University.";
-
-            let charIndex = 0;
-            const typedTextElement = document.querySelector('.typing-text');
-            const typingSpeed = 30;
-
-            typedTextElement.textContent = '';
-
-            function typeIntro() {
-                if (charIndex < introText.length) {
-                    typedTextElement.textContent = introText.substring(0, charIndex + 1);
-                    charIndex++;
-                    setTimeout(typeIntro, typingSpeed);
-                } else {
-                    typedTextElement.style.borderRight = 'none';
-                }
-            }
-
-            setTimeout(typeIntro, 800);
-
             //Top navigation bar
             const header = document.querySelector('.site-header');
             const toggle = document.querySelector('.nav-toggle');
@@ -102,8 +81,8 @@
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1 class="floating">Hi, I'm Allison!</h1>
-                        <p class="university">New Mexico State University // Class of 2027</p>
-                        <p class="intro">"Welcome to my portfolio! I'm a passionate student studying cybersecurity and pursuing a master's in computer science at New Mexico State University."</p>
+                        <p class="university">New Mexico State University</p>
+                        <p class="intro">"I'm a passionate student studying cybersecurity graduating in May 2027 at NMSU. I am enrolled in an accelerated program allowing me to complete a master's of computer science in May 2028 at NMSU."</p>
                     </div>
                     <div class="hero-image">
                         <img src="assets/headshot.jpg" alt="Allison" class="profile-image">
