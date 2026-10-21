@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <title>Allison Barricklow - Portfolio</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Typing animation for the introduction paragraph
-            //const introText = "Welcome to my portfolio! I'm a passionate student studying cybersecurity and pursuing a master's in computer science at New Mexico State University.";
-            
+            // ===== Typing animation for the introduction paragraph =====
+            const introText = "Welcome to my portfolio! I'm a passionate student studying cybersecurity and pursuing a master's in computer science at New Mexico State University.";
+
             let charIndex = 0;
             const typedTextElement = document.querySelector('.typing-text');
-            const typingSpeed = 30; // Faster for longer text
+            const typingSpeed = 30;
 
             typedTextElement.textContent = '';
 
@@ -23,24 +24,73 @@
                     charIndex++;
                     setTimeout(typeIntro, typingSpeed);
                 } else {
-                    // Remove cursor when typing is complete
                     typedTextElement.style.borderRight = 'none';
                 }
             }
 
-            // Start typing animation after a short delay
             setTimeout(typeIntro, 800);
+
+            // ===== Top navigation bar =====
+            const header = document.querySelector('.site-header');
+            const toggle = document.querySelector('.nav-toggle');
+            const navList = document.querySelector('.nav-links');
+            const navLinks = navList.querySelectorAll('a');
+
+            // Mobile menu open/close
+            toggle.addEventListener('click', function() {
+                const isOpen = navList.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen);
+                toggle.innerHTML = isOpen
+                    ? '<i class="fas fa-xmark"></i>'
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // Close the mobile menu after picking a link
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navList.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+
+            // Add a border/shadow once the page scrolls
+            function onScroll() {
+                header.classList.toggle('scrolled', window.scrollY > 10);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            // Highlight the link for the section currently in view
+            const sections = Array.from(navLinks)
+                .map(function(link) { return document.querySelector(link.getAttribute('href')); })
+                .filter(Boolean);
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(function(link) {
+                            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-40% 0px -55% 0px' });
+
+            sections.forEach(function(section) { observer.observe(section); });
         });
     </script>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">Allison Barricklow</div>
+    <header class="site-header">
+        <nav class="container" aria-label="Main navigation">
+            <a href="#about" class="logo">Allison Barricklow</a>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -56,11 +106,6 @@
                         <div class="typing-container">
                             <span class="typing-text"></span>
                             <span class="ghost-text">"Welcome to my portfolio! I'm a passionate student studying cybersecurity and pursuing a master's in computer science at New Mexico State University."</span>
-                        </div>
-                        <div class="cta-buttons">
-                            <a href="#experience" class="btn btn-nav">Experience</a>
-                            <a href="#projects" class="btn btn-primary">Projects</a>
-                            <a href="#contact" class="btn btn-secondary">Contact</a>
                         </div>
                     </div>
                     <div class="hero-image">
@@ -154,12 +199,12 @@
                 <h3>Let's Connect!</h3>
 
                 <div class="social-links">
-                    <a href="mailto:aab05@nmsu.edu">
+                    <a href="mailto:aab05@nmsu.edu" aria-label="Email">
                         <i class="fas fa-envelope"></i></a>
-                    <a href="www.linkedin.com/in/allison-barricklow" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/allison-barricklow" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="github.com/abarricklow" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/abarricklow" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>

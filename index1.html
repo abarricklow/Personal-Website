@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <title>Allison Barricklow</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Typing animation for the introduction paragraph
+            const introText = "I'm a passionate student studying cybersecurity graduating in May 2027 at New Mexico State University. I am enrolled in an accelerated program allowing me to complete a master's of computer science in May 2028 at NMSU.";
+            
+            let charIndex = 0;
+            const typedTextElement = document.querySelector('.typing-text');
+            const typingSpeed = 30; // Faster for longer text
+
+            typedTextElement.textContent = '';
+
+            function typeIntro() {
+                if (charIndex < introText.length) {
+                    typedTextElement.textContent = introText.substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeIntro, typingSpeed);
+                } else {
+                    // Remove cursor when typing is complete
+                    typedTextElement.style.borderRight = 'none';
+                }
+            }
+
+            // Start typing animation after a short delay
+            setTimeout(typeIntro, 800);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Allison Barricklow</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="floating">Hi, I'm Allison!</h1>
+                        <p class="university">New Mexico State University // Class of 2027</p>
+                        <div class="typing-container">
+                            <span class="typing-text"></span>
+                            <span class="ghost-text">"Welcome to my portfolio! I'm a passionate student studying cybersecurity and pursuing a master's in computer science at New Mexico State University."</span>
+                        </div>
+                        <div class="cta-buttons">
+                            <a href="#experience" class="btn btn-nav">Experience</a>
+                            <a href="#projects" class="btn btn-primary">Projects</a>
+                            <a href="#contact" class="btn btn-secondary">Contact</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/headshot.jpg" alt="Allison" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <p class="spacing"></p>
+                <h2>Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+     
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                        
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="card-grid">
+
+                    <div class="card">
+                        <h3> Project 1 </h3>
+                    </div>
+
+                    <div class="card">
+                        <h3>Project 2</h3>
+                    </div>
+
+                    <div class="card">
+                        <h3>Project 3</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <p class="spacing"></p>
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Python</span>
+                            <span class="skill-item">Java</span>
+                            <span class="skill-item">C++</span>
+                            <span class="skill-item">HTML & CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Let's Connect!</h3>
+
+                <div class="social-links">
+                    <a href="mailto:aab05@nmsu.edu">
+                        <i class="fas fa-envelope"></i></a>
+                    <a href="www.linkedin.com/in/allison-barricklow" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="github.com/abarricklow" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+
+                <p style="margin-top: 30px; color: #6F826A; font-size: 0.9rem;">
+                    Made by Allison
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
