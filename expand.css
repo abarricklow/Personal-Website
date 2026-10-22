@@ -1,6 +1,58 @@
-/* Expandable cards (Experience + Projects) */
+/* ===== Card grid layout: 3 equal cards, ~1 inch side margins ===== */
+#experience .container,
+#projects .container {
+    max-width: none;
+    padding-left: 1.1in;
+    padding-right: 1.1in;
+    box-sizing: border-box;
+}
 
-/* Make clickable cards look clickable 
+#experience .experience-grid,
+#projects .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch; /* every card in a row gets the same height */
+}
+
+#experience .experience-grid > .experience-card,
+#projects .card-grid > .card {
+    min-width: 0;  /* long words or images can't stretch a column */
+    margin: 0;
+    width: auto;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Tablets: 2 per row */
+@media (max-width: 900px) {
+    #experience .experience-grid,
+    #projects .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    #experience .container,
+    #projects .container {
+        padding-left: 0.5in;
+        padding-right: 0.5in;
+    }
+}
+
+/* Phones: 1 per row, smaller margins so the cards aren't squeezed */
+@media (max-width: 600px) {
+    #experience .experience-grid,
+    #projects .card-grid {
+        grid-template-columns: 1fr;
+    }
+    #experience .container,
+    #projects .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+/* ===== Expandable cards (Experience + Projects) ===== */
+
+/* Make clickable cards look clickable */
 .expandable {
     cursor: pointer;
 }
@@ -8,7 +60,6 @@
     outline: 3px solid #6F826A;
     outline-offset: 4px;
 }
-*/
 
 /* The hidden details inside each card never show in the grid */
 .card-details {
