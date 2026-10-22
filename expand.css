@@ -110,7 +110,21 @@
 
 .card-panel-body h3 {
     margin-top: 0;
+    margin-bottom: 0.5rem;
     padding-right: 2.5rem; /* room for the close button */
+    color: #0f4318;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.card-panel-body p,
+.card-panel-body li {
+    color: #5A5A5A;
+}
+
+.card-panel-body ul {
+    padding-left: 1.25rem;
+    margin-top: 0.75rem;
 }
 
 /* Show the details that were hidden in the grid */
