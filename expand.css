@@ -1,0 +1,157 @@
+/* Expandable cards (Experience + Projects) */
+
+/* Make clickable cards look clickable 
+.expandable {
+    cursor: pointer;
+}
+.expandable:focus-visible {
+    outline: 3px solid #6F826A;
+    outline-offset: 4px;
+}
+*/
+
+/* The hidden details inside each card never show in the grid */
+.card-details {
+    display: none;
+}
+
+/* Dimmed background */
+.card-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 24, 20, 0.55);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 1000;
+}
+.card-overlay.visible {
+    opacity: 1;
+}
+
+/* The panel that grows out of the card */
+.card-panel {
+    position: fixed;
+    z-index: 1001;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition:
+        top 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        left 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        width 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+        height 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-panel-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem 2rem 2.25rem;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.card-panel.content-in .card-panel-body {
+    opacity: 1;
+}
+
+.card-panel-body h3 {
+    margin-top: 0;
+    padding-right: 2.5rem; /* room for the close button */
+}
+
+/* Show the details that were hidden in the grid */
+.card-panel-body .card-details {
+    display: block;
+}
+
+/* Close button */
+.card-panel-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 50%;
+    background: rgba(111, 130, 106, 0.15);
+    color: #3d4a3a;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+}
+.card-panel-close:hover {
+    background: rgba(111, 130, 106, 0.3);
+}
+.card-panel-close:focus-visible {
+    outline: 3px solid #6F826A;
+    outline-offset: 2px;
+}
+
+/* Photo gallery inside the expanded card */
+.detail-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+}
+.detail-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+.detail-gallery figure {
+    margin: 0;
+}
+.detail-gallery figcaption {
+    font-size: 0.85rem;
+    color: #6F826A;
+    margin-top: 0.35rem;
+}
+
+.card-details p,
+.card-details li {
+    line-height: 1.65;
+    max-width: 70ch;
+}
+
+.detail-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+.detail-links a {
+    color: #6F826A;
+    font-weight: 600;
+}
+
+/* Stop the page behind from scrolling while open */
+body.card-open {
+    overflow: hidden;
+}
+
+/* Small screens: let the panel take nearly the whole screen */
+@media (max-width: 600px) {
+    .card-panel-body {
+        padding: 1.5rem 1.25rem 1.75rem;
+    }
+    .detail-gallery img {
+        height: 170px;
+    }
+}
+
+/* Respect users who turn off animations */
+@media (prefers-reduced-motion: reduce) {
+    .card-overlay,
+    .card-panel,
+    .card-panel-body {
+        transition: none !important;
+    }
+}

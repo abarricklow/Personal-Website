@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="expand.css">
+    <script src="expand.js" defer></script>
     <title>Allison Barricklow - Portfolio</title>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -98,7 +100,7 @@
                                 <i class="fab fa-github"></i>
                             </a>
                             <a href="assets/AllisonBarricklow-Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">
-                                <i class="fa fa-file-text"></i>
+                                <i class="fas fa-file-lines"></i>
                             </a>
                         </div>
                     </div>
@@ -114,33 +116,90 @@
                 <p class="spacing"></p>
                 <h2>Experience</h2>
                 <div class="experience-grid">
-                    <div class="experience-card">
+                    <div class="experience-card expandable">
                         <div class="experience-header">
-                            
+                            <h3> Job 1 </h3>
+
+                            </div>
+                                <p>Short one-line summary shown on the card</p>
+
+                                <div class="card-details">
+                                    <div class="detail-gallery">
+                                        <figure>
+                                            <img src="assets/job1-photo1.jpg" alt="Describe the photo">
+                                            <figcaption>Optional caption</figcaption>
+                                        </figure>
+                                        <figure>
+                                            <img src="assets/job1-photo2.jpg" alt="Describe the photo">
+                                        </figure>
+                                    </div>
+                                    <p>Longer description of what you did, what you learned, the impact…</p>
+                                    <ul>
+                                        <li>Accomplishment or responsibility</li>
+                                        <li>Another one</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-card expandable">
+                        <div class="experience-header">
+                            <h3>Job 1</h3>
+                        </div>
+                        <p>Short one-line summary shown on the card</p>
+
+                        <div class="card-details">
+                            <div class="detail-gallery">
+                                <figure>
+                                    <img src="assets/job1-photo1.jpg" alt="Describe the photo">
+                                    <figcaption>Optional caption</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/job1-photo2.jpg" alt="Describe the photo">
+                                </figure>
+                            </div>
+                            <p>Longer description of what you did, what you learned, the impact…</p>
+                            <ul>
+                                <li>Accomplishment or responsibility</li>
+                                <li>Another one</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-card expandable">
+                        <div class="experience-header">
+                            <h3>Job 1</h3>
+                        </div>
+                        <p>Short one-line summary shown on the card</p>
+
+                        <div class="card-details">
+                            <div class="detail-gallery">
+                                <figure>
+                                    <img src="assets/job1-photo1.jpg" alt="Describe the photo">
+                                    <figcaption>Optional caption</figcaption>
+                                </figure>
+                                <figure>
+                                    <img src="assets/job1-photo2.jpg" alt="Describe the photo">
+                                </figure>
+                            </div>
+                            <p>Longer description of what you did, what you learned, the impact…</p>
+                            <ul>
+                                <li>Accomplishment or responsibility</li>
+                                <li>Another one</li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="experience-card">
                         <div class="experience-header">
-     
+                            <h3> Job 4 </h3>
                         </div>
                     </div>
 
                     <div class="experience-card">
                         <div class="experience-header">
-                            
-                        </div>
-                    </div>
-
-                    <div class="experience-card">
-                        <div class="experience-header">
-
-                        </div>
-                    </div>
-
-                    <div class="experience-card">
-                        <div class="experience-header">
-                        
+                            <h3> Job 5 </h3>
                         </div>
                     </div>
 
@@ -164,6 +223,10 @@
                     <div class="card">
                         <h3>Project 3</h3>
                     </div>
+
+                    <div class="card">
+                        <h3>Project 4</h3>
+                    </div>
                 </div>
             </div>
         </section>
@@ -185,9 +248,8 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <section id="news" class="section">
+        <section id="news" class="section">
             <div class="container">
                 <h2>News</h2>
                 <div class="card-grid">
@@ -204,6 +266,7 @@
                 </div>
             </div>
         </section>
+    </main>
 
     <footer id="contact">
         <div class="container">
