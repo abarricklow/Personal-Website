@@ -607,7 +607,7 @@ body {
 .experience-header {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 8px;
 }
 
