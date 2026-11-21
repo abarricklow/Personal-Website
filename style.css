@@ -624,17 +624,21 @@ body {
     flex-shrink: 0;
 }
 
-.news-title {
+.card .news-title {
     display: flex;
-    justify-content: space-between; /* title left, date right */
+    justify-content: space-between;
     align-items: baseline;
-    gap: 1rem;                      /* keeps them from touching on narrow screens */
+    gap: 1rem;
+    width: 100%;
 }
 
-.news-title .date {
-    font-weight: normal;            /* optional: make the date less bold */
+.card .news-title .date {
+    margin-left: auto;      /* forces the date to the right edge */
+    flex-shrink: 0;         /* stops the date from getting squished */
+    white-space: nowrap;
+    font-weight: normal;
     font-size: 0.9em;
-    white-space: nowrap;            /* keeps the date on one line */
+    color: #BF9264;
 }
 
 /* Footer */
