@@ -167,6 +167,7 @@
 .detail-gallery img {
     width: 100%;
     height: auto;
+    justify-content: center;
     object-fit: contain;
     border-radius: 8px;
     display: block;
