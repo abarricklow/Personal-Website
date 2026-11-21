@@ -624,6 +624,19 @@ body {
     flex-shrink: 0;
 }
 
+.news-title {
+    display: flex;
+    justify-content: space-between; /* title left, date right */
+    align-items: baseline;
+    gap: 1rem;                      /* keeps them from touching on narrow screens */
+}
+
+.news-title .date {
+    font-weight: normal;            /* optional: make the date less bold */
+    font-size: 0.9em;
+    white-space: nowrap;            /* keeps the date on one line */
+}
+
 /* Footer */
 footer {
     background: rgba(240, 241, 197, 0.5);
